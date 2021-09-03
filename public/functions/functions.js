@@ -4,18 +4,10 @@ function returnData() {
                 type: "GET",
                 url: "https://gist.githubusercontent.com/brettphillips05/4b177fbf43b3e327cba60092d8df5b8f/raw/bc3001faca208301b37970d0aa072cddfe26126c/6a257880-bbd2-4d37-a79a-90fd6145e563.json",
                 dataType: "json",
-                data: { },
                 success: function(data, status) {
-                        // $('#information').append(data["Play"]["playId"]);
-                        // $('#information').append(data["measurements"]["statistics"]["description"]);
-                        for (var i=0; i<data.length; i++) {
-                             $('#information').append(data[i]);
-                        }
-                        jQuery.each(data, function(index, item) {
-                            //now you can access properties using dot notation
-                            $('#information').append(data.measurements)
-                        });
-                        // $('#information').append(data.measurements);
+                    for (var i=0; i<3; i++) {
+                        $('#information').append(data["measurements"]["statistics"][i]["description"]);
+                    }
                     // //Stats API
                     // $.ajax({
                     //     type: "GET",
