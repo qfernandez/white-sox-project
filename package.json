@@ -1,0 +1,23 @@
+{
+  "name": "environment",
+  "version": "1.0.0",
+  "description": "___        ______     ____ _                 _  ___           / \\ \\      / / ___|   / ___| | ___  _   _  __| |/ _ \\         / _ \\ \\ /\\ / /\\___ \\  | |   | |/ _ \\| | | |/ _` | (_) |       / ___ \\ V  V /  ___) | | |___| | (_) | |_| | (_| |\\__, |      /_/   \\_\\_/\\_/  |____/   \\____|_|\\___/ \\__,_|\\__,_|  /_/   -----------------------------------------------------------------",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qfernandez/white-sox-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qfernandez/white-sox-project/issues"
+  },
+  "homepage": "https://github.com/qfernandez/white-sox-project#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}
