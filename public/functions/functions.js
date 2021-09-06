@@ -6,9 +6,39 @@ function returnData() {
                 dataType: "json",
                 success: function(data, status) {
                         $('#rpm_value').append(data["measurements"]["statistics"][0]["value"]);
+                        $('#pitch_type').append(data["measurements"]["statistics"][204]["pitch_type"]);
+                        $('#pitch_speed').append(data["measurements"]["statistics"][2]["value"]);
                         $('#launch_angle').append(data["measurements"]["statistics"][5]["value"]);
+                        $('#exit_velocity').append(data["measurements"]["statistics"][3]["value"]);
+                        $('#hit_distance').append(data["measurements"]["statistics"][38]["value"]);
                 }
             });
+}
+
+function jakeRogersBasicData(){
+    $.ajax({
+                        type: "GET",
+                        url: "https://lookup-service-prod.mlb.com/json/named.player_info.bam?sport_code=%27mlb%27&player_id=%27668670%27",
+                        dataType:"json",
+                        success: function(data, status) {
+                            $('#pitcher_name').append(data["player_info"]["queryResults"]["row"]["name_display_roster_html"]);
+                            $('#pitcher_team').append(data["player_info"]["queryResults"]["row"]["team_name"]);
+                            $('#pitcher_throws').append(data["player_info"]["queryResults"]["row"]["throws"]);
+                        }
+                     });
+}
+
+function zackCollinsBasicData(){
+    $.ajax({
+                        type: "GET",
+                        url: "https://lookup-service-prod.mlb.com/json/named.player_info.bam?sport_code=%27mlb%27&player_id=%27641470%27",
+                        dataType:"json",
+                        success: function(data, status) {
+                            $('#batter_name').append(data["player_info"]["queryResults"]["row"]["name_display_roster_html"]);
+                            $('#batter_team').append(data["player_info"]["queryResults"]["row"]["team_name"]);
+                            $('#batter_bats').append(data["player_info"]["queryResults"]["row"]["throws"]);
+                        }
+                     });
 }
 
 function zachCollinsCareerData(){
