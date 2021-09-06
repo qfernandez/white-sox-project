@@ -5,53 +5,46 @@ function returnData() {
                 url: "https://gist.githubusercontent.com/brettphillips05/4b177fbf43b3e327cba60092d8df5b8f/raw/bc3001faca208301b37970d0aa072cddfe26126c/6a257880-bbd2-4d37-a79a-90fd6145e563.json",
                 dataType: "json",
                 success: function(data, status) {
-                    for (var i=0; i<3; i++) {
-                        $('#information').append(data["measurements"]["statistics"][i]["description"]);
-                    }
-                    // //Stats API
-                    // $.ajax({
-                    //     type: "GET",
-                    //     url: "https://lookup-service-prod.mlb.com/json/named.sport_hitting_tm.bam?league_list_id='mlb'&game_type='R'&season=" + $("#year").val() + "&player_id=" + x,
-                    //     dataType:"json",
-                    //     success: function(data, status) {
-                    //         $('#p_season').append(data["sport_hitting_tm"]["queryResults"]["row"]["season"]);
-                    //         $('#p_team').append(data["sport_hitting_tm"]["queryResults"]["row"]["team_full"]);
-                    //         $('#p_avg').append(data["sport_hitting_tm"]["queryResults"]["row"]["avg"]);
-                    //         $('#p_walks').append(data["sport_hitting_tm"]["queryResults"]["row"]["bb"]);
-                    //         $('#p_rbis').append(data["sport_hitting_tm"]["queryResults"]["row"]["rbi"]);
-                    //         $('#p_hrs').append(data["sport_hitting_tm"]["queryResults"]["row"]["hr"]);
-                            
-                    //         //Image API
-                    //         // $.ajax({
-                    //         //     type: "GET",
-                    //         //     url: " https://serpapi.com/search.html?q=" + y + "&tbm=isch&ijn=0",
-                    //         //     dataType:"json",
-                    //         //     success: function(data, status) {
-                    //         //         console.log(data)
-                    //         //         $('#information').append("<br>Birth City Picture: " + data["image_results"]["original"]);
-                    //         //     }
-                    //         // });
-                    //     }
-                    //  });
+                        $('#rpm_value').append(data["measurements"]["statistics"][0]["value"]);
+                        $('#launch_angle').append(data["measurements"]["statistics"][5]["value"]);
                 }
             });
-            // $.ajax({
+}
 
-            //         type: "GET",
-            //         url: "api/getPetInfo.php",
-            //         dataType: "json",
-            //         data: { "petid": $(this).attr('id') },
-            //         success: function(data, status) {
-            //             $("#petname").html(data.name);
-            //             $("#description").html(data.description);
-            //             $("#petImage").attr('src', "img/" + data.pictureURL);
-            //             $("#breed").html(data.breed);
-            //             $("#age").html(2018 - data.yob);
-                        
-            //             //alert(data); 
-                        
-                        
-                    
-            //         },
-            //   }); // ajax closing
+function zachCollinsCareerData(){
+    // //Stats API
+                    $.ajax({
+                        type: "GET",
+                        url: "https://lookup-service-prod.mlb.com/json/named.sport_career_hitting.bam?league_list_id=%27mlb%27&game_type=%27R%27&player_id=%27641470%27",
+                        dataType:"json",
+                        success: function(data, status) {
+                            $('#batter_runs').append(data["sport_career_hitting"]["queryResults"]["row"]["r"]);
+                            $('#batter_hits').append(data["sport_career_hitting"]["queryResults"]["row"]["h"]);
+                            $('#batter_homeruns').append(data["sport_career_hitting"]["queryResults"]["row"]["hr"]);
+                            $('#batter_rbis').append(data["sport_career_hitting"]["queryResults"]["row"]["rbi"]);
+                            $('#batter_bb').append(data["sport_career_hitting"]["queryResults"]["row"]["bb"]);
+                            $('#batter_avg').append(data["sport_career_hitting"]["queryResults"]["row"]["avg"]);
+                            $('#batter_obp').append(data["sport_career_hitting"]["queryResults"]["row"]["obp"]);
+                            $('#batter_ops').append(data["sport_career_hitting"]["queryResults"]["row"]["ops"]);
+                        }
+                     });
+}
+
+function jakeRogersCareerData(){
+    // //Stats API
+                    $.ajax({
+                        type: "GET",
+                        url: "https://lookup-service-prod.mlb.com/json/named.sport_career_pitching.bam?league_list_id=%27mlb%27&game_type=%27R%27&player_id=%27668670%27",
+                        dataType:"json",
+                        success: function(data, status) {
+                            $('#pitcher_era').append(data["sport_career_pitching"]["queryResults"]["row"]["era"]);
+                            $('#pitcher_ip').append(data["sport_career_pitching"]["queryResults"]["row"]["ip"]);
+                            $('#pitcher_hits').append(data["sport_career_pitching"]["queryResults"]["row"]["h"]);
+                            $('#pitcher_whip').append(data["sport_career_pitching"]["queryResults"]["row"]["whip"]);
+                            $('#pitcher_avg').append(data["sport_career_pitching"]["queryResults"]["row"]["avg"]);
+                            $('#pitcher_obp').append(data["sport_career_pitching"]["queryResults"]["row"]["obp"]);
+                            $('#pitcher_k9').append(data["sport_career_pitching"]["queryResults"]["row"]["k9"]);
+                            $('#pitcher_spct').append(data["sport_career_pitching"]["queryResults"]["row"]["spct"]);
+                        }
+                     });
 }

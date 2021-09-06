@@ -4,15 +4,88 @@
         <title>White Sox at-bat Project</title>
         <script type="text/javascript" src="functions/functions.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/styles.css" type="text/css"/>
     </head>
     <body>
         <h1>White Sox at-bat Project</h1>
         <video width="320" height="240" controls>
-            <source src="img/zach_collins_atbat.mp4" type="video/mp4">
+            <source src="img/zack_collins_atbat.mp4" type="video/mp4">
         </video>    
-        <div id="information"></div>
+        <div id="information">
+            <h1>Pitcher Info</h1>
+            <table>
+                <tr>
+                    <td>RPM</td>
+                    <td id = "rpm_value"></td>
+                </tr>
+            </table>
+            <h1>Batter Info</h1>
+            <table>
+                <tr>
+                    <td>Launch Angle</td>
+                    <td id = "launch_angle"></td>
+                </tr>
+            </table>
+        </div>
+        <br></br>
+        <div id="zachcollins">
+            <h3>Zack Collins Career Hitting Statistics</h3>
+            <img src="img/zack_collins.jpg" alt="Zack Collins">
+            <table>
+                <tr>
+                    <th>Runs</th>
+                    <th>Hits</th>
+                    <th>HRs</th>
+                    <th>RBIs</th>
+                    <th>BB</th>
+                    <th>AVG</th>
+                    <th>OBP</th>
+                    <th>OPS</th>
+                </tr>
+                <tr>
+                    <th id="batter_runs"></th>
+                    <th id="batter_hits"></th>
+                    <th id="batter_homeruns"></th>
+                    <th id="batter_rbis"></th>
+                    <th id="batter_bb"></th>
+                    <th id="batter_avg"></th>
+                    <th id="batter_obp"></th>
+                    <th id="batter_ops"></th>
+                </tr>
+            </table>
+        </div>
+        <br></br>
+        <div id="jakerogers">
+            <h3>Jake Rogers Career Pitching Statistics</h3>
+            <img src="img/jake_rogers.jpg" alt="Jake Rogers">
+            <img>
+            <table>
+                <tr>
+                    <th>ERA</th>
+                    <th>IP</th>
+                    <th>Hits</th>
+                    <th>WHIP</th>
+                    <th>AVG</th>
+                    <th>OBP</th>
+                    <th>K/9</th>
+                    <th>SPct</th>
+                </tr>
+                <tr>
+                    <th id="pitcher_era"></th>
+                    <th id="pitcher_ip"></th>
+                    <th id="pitcher_hits"></th>
+                    <th id="pitcher_whip"></th>
+                    <th id="pitcher_avg"></th>
+                    <th id="pitcher_obp"></th>
+                    <th id="pitcher_k9"></th>
+                    <th id="pitcher_spct"></th>
+                </tr>
+            </table>
+        </div>
         <script>
             returnData();
+            zachCollinsCareerData();
+            jakeRogersCareerData();
         </script>
     </body>
 </html>
