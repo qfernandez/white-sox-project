@@ -1,3 +1,31 @@
 table, th, td {
   border:1px solid black;
+  text-align: center;
+  padding: 3px;
+}
+
+img {
+  border-radius: 8px;
+  width: 150px;
+}
+
+video{
+    float: left;
+    padding-right: 30px;
+    padding-left: 20px;
+}
+
+#player_careers_stats{
+    padding-top: 70px;
+}
+
+#pitcher_info{
+    float: left;
+    padding-right: 10px;
+    padding-left: 20px;
+}
+
+#batter_info {
+    float:left;
+    padding-right: 10px;
 }

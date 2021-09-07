@@ -5,13 +5,100 @@
         <script type="text/javascript" src="functions/functions.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" href="css/styles.css" type="text/css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     </head>
     <body>
-        <h1>White Sox at-bat Project</h1>
-        <video width="320" height="240" controls>
-            <source src="img/zack_collins_atbat.mp4" type="video/mp4">
-        </video>    
-        <div id="information">
+        <nav class="navbar navbar-dark" style="background-color: black;">
+          <span class="navbar-brand mb-2 h1">Chicago<span p class="font-weight-bold"> White Sox</span></span>
+        </nav>
+        <div id = "video_and_cards">
+            <div class = "float-start" id = "video">
+                <video width="950" height="650" controls>
+                <source src="img/zack_collins_atbat.mp4" type="video/mp4">
+            </div>
+            <div class = "float-end" id = "player_careers_stats">
+                <div id="zachcollins">
+                    <div class="card mb-3" style="max-width: 540px;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="img/zack_collins.jpg" alt="Zack Collins">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Zack Collins Career Hitting Statistics</h5>
+                            <p class="card-text">
+                                <table>
+                                    <tr>
+                                        <th>Runs</th>
+                                        <th>Hits</th>
+                                        <th>HRs</th>
+                                        <th>RBIs</th>
+                                        <th>BB</th>
+                                        <th>AVG</th>
+                                        <th>OBP</th>
+                                        <th>OPS</th>
+                                    </tr>
+                                    <tr>
+                                        <th id="batter_runs"></th>
+                                        <th id="batter_hits"></th>
+                                        <th id="batter_homeruns"></th>
+                                        <th id="batter_rbis"></th>
+                                        <th id="batter_bb"></th>
+                                        <th id="batter_avg"></th>
+                                        <th id="batter_obp"></th>
+                                        <th id="batter_ops"></th>
+                                    </tr>
+                                </table>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            <br></br>
+                <div id="jakerogers">
+                    <div class="card mb-3" style="max-width: 540px;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="img/jake_rogers.jpg" alt="Jake Rogers">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Jake Rogers Career Pitching Statistics</h5>
+                            <p class="card-text">
+                                <table>
+                                    <tr>
+                                        <th>ERA</th>
+                                        <th>IP</th>
+                                        <th>Hits</th>
+                                        <th>WHIP</th>
+                                        <th>AVG</th>
+                                        <th>OBP</th>
+                                        <th>K/9</th>
+                                        <th>SPct</th>
+                                    </tr>
+                                    <tr>
+                                        <th id="pitcher_era"></th>
+                                        <th id="pitcher_ip"></th>
+                                        <th id="pitcher_hits"></th>
+                                        <th id="pitcher_whip"></th>
+                                        <th id="pitcher_avg"></th>
+                                        <th id="pitcher_obp"></th>
+                                        <th id="pitcher_k9"></th>
+                                        <th id="pitcher_spct"></th>
+                                    </tr>
+                                </table>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br></br><br/>
+        <div id="information" class = "d-grid gap-3">
+            <div class = "float start" id = "pitcher_info">
             <h1>Pitcher Info</h1>
             <table>
                 <tr>
@@ -39,6 +126,8 @@
                     <td id = "pitch_speed"></td>
                 </tr>
             </table>
+            </div>
+            <div class = "float-end" id = "batter_info">
             <h1>Batter Info</h1>
             <table>
                 <tr>
@@ -66,62 +155,14 @@
                     <td id = "hit_distance"></td>
                 </tr>
             </table>
+            </div>
+            <div>
+            <h1>Aspects of the play</h1>
+            <div id = "facts"></div>
+            <button onclick = "showFacts()"> Facts from the Play</button>
+        </div>
         </div>
         <br></br>
-        <div id="zachcollins">
-            <h3>Zack Collins Career Hitting Statistics</h3>
-            <img src="img/zack_collins.jpg" alt="Zack Collins">
-            <table>
-                <tr>
-                    <th>Runs</th>
-                    <th>Hits</th>
-                    <th>HRs</th>
-                    <th>RBIs</th>
-                    <th>BB</th>
-                    <th>AVG</th>
-                    <th>OBP</th>
-                    <th>OPS</th>
-                </tr>
-                <tr>
-                    <th id="batter_runs"></th>
-                    <th id="batter_hits"></th>
-                    <th id="batter_homeruns"></th>
-                    <th id="batter_rbis"></th>
-                    <th id="batter_bb"></th>
-                    <th id="batter_avg"></th>
-                    <th id="batter_obp"></th>
-                    <th id="batter_ops"></th>
-                </tr>
-            </table>
-        </div>
-        <br></br>
-        <div id="jakerogers">
-            <h3>Jake Rogers Career Pitching Statistics</h3>
-            <img src="img/jake_rogers.jpg" alt="Jake Rogers">
-            <img>
-            <table>
-                <tr>
-                    <th>ERA</th>
-                    <th>IP</th>
-                    <th>Hits</th>
-                    <th>WHIP</th>
-                    <th>AVG</th>
-                    <th>OBP</th>
-                    <th>K/9</th>
-                    <th>SPct</th>
-                </tr>
-                <tr>
-                    <th id="pitcher_era"></th>
-                    <th id="pitcher_ip"></th>
-                    <th id="pitcher_hits"></th>
-                    <th id="pitcher_whip"></th>
-                    <th id="pitcher_avg"></th>
-                    <th id="pitcher_obp"></th>
-                    <th id="pitcher_k9"></th>
-                    <th id="pitcher_spct"></th>
-                </tr>
-            </table>
-        </div>
         <script>
             returnData();
             zackCollinsBasicData();

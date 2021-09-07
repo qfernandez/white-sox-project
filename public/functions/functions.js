@@ -78,3 +78,27 @@ function jakeRogersCareerData(){
                         }
                      });
 }
+
+function showFacts(){
+    
+    $("#facts").empty();
+    
+    $.ajax({
+        type: "GET",
+        url: "https://gist.githubusercontent.com/brettphillips05/4b177fbf43b3e327cba60092d8df5b8f/raw/bc3001faca208301b37970d0aa072cddfe26126c/6a257880-bbd2-4d37-a79a-90fd6145e563.json",
+        dataType:"json",
+        success: function(data, status) {
+            var i = getRandomInt(204);
+            $('#facts').append("Type ID: " + data["measurements"]["statistics"][i]["type_id"] + "<br>");
+            $('#facts').append("Category: " + data["measurements"]["statistics"][i]["category"] + "<br>");
+            $('#facts').append("Descritpion: " + data["measurements"]["statistics"][i]["description"] + "<br>");
+            $('#facts').append("Name: " + data["measurements"]["statistics"][i]["name"] + "<br>");
+            $('#facts').append("Value: " + data["measurements"]["statistics"][i]["value"] + "<br>");
+            $('#facts').append("Unit: " + data["measurements"]["statistics"][i]["unit"] + "<br>");
+        }
+    });
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
