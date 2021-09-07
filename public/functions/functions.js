@@ -89,10 +89,10 @@ function showFacts(){
         dataType:"json",
         success: function(data, status) {
             var i = getRandomInt(204);
+            $('#facts').append("Name: " + data["measurements"]["statistics"][i]["name"] + "<br>");
             $('#facts').append("Type ID: " + data["measurements"]["statistics"][i]["type_id"] + "<br>");
             $('#facts').append("Category: " + data["measurements"]["statistics"][i]["category"] + "<br>");
             $('#facts').append("Descritpion: " + data["measurements"]["statistics"][i]["description"] + "<br>");
-            $('#facts').append("Name: " + data["measurements"]["statistics"][i]["name"] + "<br>");
             $('#facts').append("Value: " + data["measurements"]["statistics"][i]["value"] + "<br>");
             $('#facts').append("Unit: " + data["measurements"]["statistics"][i]["unit"] + "<br>");
         }
