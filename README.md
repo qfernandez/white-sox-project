@@ -47,7 +47,7 @@ bottom of the video, I pulled data from MLB's Data API and the JSON file to mimi
 ## Authors
 
 Quentin-Allen Fernandez
-ex. [@qfernandez](https://github.com/qfernandez/)
+[@qfernandez](https://github.com/qfernandez/)
 
 ## Acknowledgments
 
